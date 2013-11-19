@@ -57,7 +57,16 @@
     function capturePhoto() {
       // Take picture using device camera and retrieve image as base64-encoded string
       navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 50,
-        destinationType: destinationType.DATA_URL });
+        destinationType: destinationType.DATA_URL,
+       sourceType: Camera.PictureSourceType.PHOTOLIBRARY});
+		
+
+		// Reposition the popover if the orientation changes.
+	
+	 window.onorientationchange = function() {
+     var cameraPopoverOptions = new CameraPopoverOptions(0, 0, 100, 100, 0);
+     cameraPopoverHandle.setPosition(cameraPopoverOptions);
+		
     }
 
     // A button will call this function
@@ -85,9 +94,9 @@
 	function onSuccess(imageData) {
       // Do stuff with the image!
  }
-
+	
  
-
+<!------
  var cameraPopoverHandle = navigator.camera.getPicture(onSuccess, onFail,
      { destinationType: Camera.DestinationType.FILE_URI,
        sourceType: Camera.PictureSourceType.PHOTOLIBRARY });
@@ -97,3 +106,5 @@
      var cameraPopoverOptions = new CameraPopoverOptions(0, 0, 100, 100, 0);
      cameraPopoverHandle.setPosition(cameraPopoverOptions);
  }
+ 
+ 
