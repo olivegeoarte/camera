@@ -30,7 +30,6 @@
       // The inline CSS rules are used to resize the image
       //
       smallImage.src = "data:image/jpeg;base64," + imageData;
-	  alert(smallImage.src)
     }
 
     // Called when a photo is successfully retrieved
@@ -59,9 +58,6 @@
       // Take picture using device camera and retrieve image as base64-encoded string
       navigator.camera.getPicture(onPhotoDataSuccess, onFail, { quality: 50,
         destinationType: destinationType.DATA_URL });
-		
-		
-		
     }
 
     // A button will call this function
@@ -86,20 +82,4 @@
     function onFail(message) {
       alert('Failed because: ' + message);
     }
-	function onSuccess(imageData) {
-      // Do stuff with the image!
- }
 	
- 
-<!------
- var cameraPopoverHandle = navigator.camera.getPicture(onSuccess, onFail,
-     { destinationType: Camera.DestinationType.FILE_URI,
-       sourceType: Camera.PictureSourceType.PHOTOLIBRARY });
-
- // Reposition the popover if the orientation changes.
- window.onorientationchange = function() {
-     var cameraPopoverOptions = new CameraPopoverOptions(0, 0, 100, 100, 0);
-     cameraPopoverHandle.setPosition(cameraPopoverOptions);
- }
- 
- 
