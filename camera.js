@@ -63,10 +63,10 @@
 		
 
 		// Reposition the popover if the orientation changes.
-	
+	/*
 	 window.onorientationchange = function() {
      var cameraPopoverOptions = new CameraPopoverOptions(0, 0, 100, 100, 0);
-     cameraPopoverHandle.setPosition(cameraPopoverOptions);
+     cameraPopoverHandle.setPosition(cameraPopoverOptions);*/
 		
     }
 
