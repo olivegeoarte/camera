@@ -82,3 +82,18 @@
     function onFail(message) {
       alert('Failed because: ' + message);
     }
+	function onSuccess(imageData) {
+      // Do stuff with the image!
+ }
+
+ 
+
+ var cameraPopoverHandle = navigator.camera.getPicture(onSuccess, onFail,
+     { destinationType: Camera.DestinationType.FILE_URI,
+       sourceType: Camera.PictureSourceType.PHOTOLIBRARY });
+
+ // Reposition the popover if the orientation changes.
+ window.onorientationchange = function() {
+     var cameraPopoverOptions = new CameraPopoverOptions(0, 0, 100, 100, 0);
+     cameraPopoverHandle.setPosition(cameraPopoverOptions);
+ }
